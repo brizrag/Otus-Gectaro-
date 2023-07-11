@@ -1,0 +1,504 @@
+{
+	"info": {
+		"_postman_id": "b3f8d2c2-41cc-4d2e-9e8d-b3bba4d2bf58",
+		"name": "Project Gectaro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27531975"
+	},
+	"item": [
+		{
+			"name": "Проверка подключения",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1L2DFsHt-bZUDc_E5hME_vzz4Zd7bvHM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://app.gectaro.com/companies/8257/supply/orders",
+					"protocol": "https",
+					"host": [
+						"app",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"companies",
+						"8257",
+						"supply",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "X-chellenger",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Вывод информации по заказу",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1L2DFsHt-bZUDc_E5hME_vzz4Zd7bvHM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/resource-orders/105220/items",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"resource-orders",
+						"105220",
+						"items"
+					],
+					"query": [
+						{
+							"key": "X-chellenger",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Не валидный ввод данных в заказ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1L2DFsHt-bZUDc_E5hME_vzz4Zd7bvHM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 416727\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/resource-orders/105220/items",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"resource-orders",
+						"105220",
+						"items"
+					],
+					"query": [
+						{
+							"key": "X-chellenger",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Валидный ввод данных в заказ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1L2DFsHt-bZUDc_E5hME_vzz4Zd7bvHM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 416723,\r\n        \"resource_request_id\": 5293658,\r\n        \"volume\": \"10.0000000000\",\r\n        \"cost\": \"47612.0000000000\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/resource-orders/105220/items",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"resource-orders",
+						"105220",
+						"items"
+					],
+					"query": [
+						{
+							"key": "X-chellenger",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение данных ресурса в заказе",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1L2DFsHt-bZUDc_E5hME_vzz4Zd7bvHM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 417748,\r\n    \"resource_request_id\": 5293658,\r\n    \"resource_order_id\": \"105220\",\r\n    \"volume\": \"10.0000000000\",\r\n    \"cost\": \"479999.0000000000\",\r\n    \"created_at\": 1688469253,\r\n    \"updated_at\": 1688469253\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/resource-orders/105220/items",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"resource-orders",
+						"105220",
+						"items"
+					],
+					"query": [
+						{
+							"key": "X-chellenger",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка работы метода Head",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1L2DFsHt-bZUDc_E5hME_vzz4Zd7bvHM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "HEAD",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/resource-orders/105220/items",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"resource-orders",
+						"105220",
+						"items"
+					],
+					"query": [
+						{
+							"key": "X-chellenger",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка работы метода Options",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1L2DFsHt-bZUDc_E5hME_vzz4Zd7bvHM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "OPTIONS",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/resource-orders/105220/items",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"resource-orders",
+						"105220",
+						"items"
+					],
+					"query": [
+						{
+							"key": "X-chellenger",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка работы метода Patch",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1L2DFsHt-bZUDc_E5hME_vzz4Zd7bvHM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/resource-orders/105220/items",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"resource-orders",
+						"105220",
+						"items"
+					],
+					"query": [
+						{
+							"key": "X-chellenger",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление ресурса в заказе",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1L2DFsHt-bZUDc_E5hME_vzz4Zd7bvHM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 417748\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/resource-orders/105220/items",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"resource-orders",
+						"105220",
+						"items"
+					],
+					"query": [
+						{
+							"key": "X-chellenger",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Список статусов заказов",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1L2DFsHt-bZUDc_E5hME_vzz4Zd7bvHM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/resource-order-statuses",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"resource-order-statuses"
+					],
+					"query": [
+						{
+							"key": "X-chellenger",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "1L2DFsHt-bZUDc_E5hME_vzz4Zd7bvHM",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
